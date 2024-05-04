@@ -7,8 +7,17 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
+import { useState } from "react";
+import HoverCart from "../HoverCart/HoverCart";
 
 const Navbar = () => {
+  const [cartOpen, setCartOpen] = useState(false)
+
+  const cart = () => {
+    setCartOpen(prev => !prev)
+  }
+
+
   return (
     <div className="navbar">
         <div className="wrapper">
@@ -49,12 +58,13 @@ const Navbar = () => {
                 <PersonOutlineIcon />
                 <FavoriteBorderIcon />
                 <div className="cartIcon">
-                <ShoppingCartOutlinedIcon />
+                <ShoppingCartOutlinedIcon onClick={cart}/>
                 <span>0</span>
                 </div>
               </div>
             </div>
         </div>
+        {cartOpen && <HoverCart />}
     </div>
   )
 }

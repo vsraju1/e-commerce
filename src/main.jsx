@@ -7,6 +7,7 @@ import Home from './components/Home/Home.jsx'
 import Product from './components/Product/Product.jsx'
 import Products from './components/Products/Products.jsx'
 import './App.css'
+import SearchProduct from './components/SearchProduct/SearchProduct.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -14,8 +15,8 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="products" element={<Products/>} />
       <Route path="product" element={<Product/>} />
-      <Route path="products/:id" element={<h1>This is serached products page.</h1>} />
-      <Route path="product/:id" element={<h1>This is searched product page.</h1>} />
+      <Route path="products/:id" element={<SearchProduct />} />
+      <Route path="product/:id" element={<Product />} />
     </Route>
   )
   

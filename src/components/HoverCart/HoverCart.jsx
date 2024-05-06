@@ -1,54 +1,43 @@
 import './HoverCart.scss'
+import { useDispatch } from 'react-redux';
 
 //icons
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import { useSelector } from 'react-redux';
+import { removeItem, resetCart } from '../../cartState/CartSlice';
 
 
-const Data = [
-    {
-        id: 1,
-        title: "Gate",
-        description: 'This is the product descriptio. Usually it should be more than 100 words so to make the requirement complete iam writing this much of content. sorry but thank you.',
-        img: "https://images.pexels.com/photos/22718464/pexels-photo-22718464/free-photo-of-fewa-lake-phewa-lake-pokhara-iv.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        img2: "https://images.pexels.com/photos/22924802/pexels-photo-22924802/free-photo-of-the-forest.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-        isNew: true,
-        oldPrice: 28000,
-        price: 22000,
-    },
-    {
-        id: 1,
-        title: "Gate",
-        description: 'This is the product descriptio. Usually it should be more than 100 words so to make the requirement complete iam writing this much of content. sorry but thank you.',
-        img: "https://images.pexels.com/photos/22718464/pexels-photo-22718464/free-photo-of-fewa-lake-phewa-lake-pokhara-iv.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        img2: "https://images.pexels.com/photos/22924802/pexels-photo-22924802/free-photo-of-the-forest.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-        isNew: true,
-        oldPrice: 28000,
-        price: 22000,
-    }
 
-]
 const HoverCart = () => {
+    const dispatch = useDispatch()
+    const cartProducts = useSelector(state=> state.products)
+
+  const totalPrice = () => {
+    let total = 0;
+    cartProducts.forEach((item) => (total += item.quantity * item.price));
+    return total.toFixed(2)
+  }
   return (
     <div className="cart">
         <h2>Products in your cart</h2>
-        {Data?.map((item) => (
+        {cartProducts?.map((item) => (
             <div className="item" key={item.id}>
                 <img src={item.img} alt="" />
                 <div className="details">
                     <h3>{item.title}</h3>
                     <p>{item.description?.substring(0,50)}</p>
-                    <div className="price">1 X ${item.price}</div>
+                    <div className="price">{item.quantity} X ${item.price}</div>
                 </div>
-                <DeleteOutlineIcon className='deleteItem'/>
+                <DeleteOutlineIcon className='deleteItem' onClick={()=>dispatch(removeItem(item.id))}/>
             </div>
         ))}
 
         <div className="total">
             <span>SUBTOTAL:</span>
-            <span>$123</span>
+            <span>${totalPrice()}</span>
         </div>
         <button>Proceed to Checkout</button>
-        <p className='reset'>RESET CART</p>
+        <p className='reset' onClick={()=>dispatch(resetCart())}>RESET CART</p>
     </div>
   )
 }

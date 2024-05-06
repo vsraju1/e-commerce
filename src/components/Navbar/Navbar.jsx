@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import './Navbar.scss'
+import { useSelector } from "react-redux";
 
 //icons
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
@@ -16,6 +17,8 @@ const Navbar = () => {
   const cart = () => {
     setCartOpen(prev => !prev)
   }
+
+  const cartProducts = useSelector(state=> state.products)
 
 
   return (
@@ -59,7 +62,7 @@ const Navbar = () => {
                 <FavoriteBorderIcon />
                 <div className="cartIcon">
                 <ShoppingCartOutlinedIcon onClick={cart}/>
-                <span>0</span>
+                <span>{cartProducts.length}</span>
                 </div>
               </div>
             </div>

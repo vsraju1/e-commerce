@@ -10,7 +10,7 @@ import { allProducts } from "../../Data/Data";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import BalanceIcon from "@mui/icons-material/Balance";
-import { addItem } from "../../cartState/CartSlice";
+import { addItem } from "../../reducers/CartSlice";
 
 const Product = () => {
   const [quantity, setQuantity] = useState(1);

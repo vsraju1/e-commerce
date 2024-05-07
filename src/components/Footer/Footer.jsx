@@ -1,7 +1,9 @@
+import HomeContact from "../HomeContact/HomeContact";
 import "./Footer.scss";
 
 const Footer = () => {
-  return (
+  return (<>
+    <HomeContact />
     <div className="footer">
       <div className="top">
         <div className="item">
@@ -39,6 +41,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

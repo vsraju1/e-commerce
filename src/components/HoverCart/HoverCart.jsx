@@ -4,17 +4,17 @@ import { useDispatch } from 'react-redux';
 //icons
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { useSelector } from 'react-redux';
-import { removeItem, resetCart } from '../../cartState/CartSlice';
+import { removeItem, resetCart } from '../../reducers/CartSlice';
 
 
 
 const HoverCart = () => {
     const dispatch = useDispatch()
-    const cartProducts = useSelector(state=> state.products)
+    const cartProducts = useSelector((state)=> state.products)
 
   const totalPrice = () => {
     let total = 0;
-    cartProducts.forEach((item) => (total += item.quantity * item.price));
+    cartProducts?.forEach((item) => (total += item.quantity * item.price));
     return total.toFixed(2)
   }
   return (

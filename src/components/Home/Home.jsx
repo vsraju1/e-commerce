@@ -13,9 +13,8 @@ const Home = () => {
   return (
     <div className="home">
         <Slider />
-        <FeaturedProducts type="featured"/>
         <Categories />
-        <HomeContact />
+        <FeaturedProducts type="featured"/>
         
     </div>
   )

@@ -17,12 +17,17 @@ import SearchProduct from "./components/SearchProduct/SearchProduct.jsx";
 import { Provider } from "react-redux";
 import { store } from "./Redux/Store.js";
 import CatProducts from "./components/CatProducts/CatProducts.jsx";
+import LoginSignUp from "./components/LoginSignUp/LoginSignUp.jsx";
+import WishListItems from "./components/WishlistItems/WishListItems.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<Home />} />
+      <Route path="wishlist" element={<WishListItems />} />
       <Route path="products" element={<Products />} />
+      <Route path="signup" element={<LoginSignUp prop = 'sign up' />} />
+      <Route path="login" element={<LoginSignUp prop = 'login' />} />
       <Route path="product" element={<Product />} />
       <Route path="products/all" element={<Products />} />
       <Route path="products/:id" element={<CatProducts />} />

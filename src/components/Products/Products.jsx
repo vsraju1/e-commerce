@@ -4,7 +4,6 @@ import "./Products.scss";
 import { useParams } from "react-router-dom";
 
 //data
-import { allProducts } from "../../Data/Data";
 
 const categoryData = [
   {

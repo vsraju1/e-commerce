@@ -1,8 +1,8 @@
-import { useState } from "react";
-import List from "../List/List";
-import "../Products/Products.scss";
+
+// import "../Products/Products.scss";
 import { useParams } from "react-router-dom";
 import Card from "../Card/Card";
+import './CatProducts.scss'
 
 //data
 import { allProducts } from "../../Data/Data";

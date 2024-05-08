@@ -1,12 +1,19 @@
 import "./Card.scss";
 import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useDispatch } from "react-redux";
 import { addItem } from "../../reducers/CartSlice";
-import { addtoWishList } from "../../reducers/WishListSlice";
+import { addtoWishList, removeWishList } from "../../reducers/WishListSlice";
+import { useSelector } from "react-redux";
 
 const Card = ({ item }) => {
   const dispatch = useDispatch();
+  const wishListItems = useSelector(state => state.wishList)
+  console.log(wishListItems)
+
+  const isItem = wishListItems.some(wishItem => wishItem.id === item.id)
+  console.log(isItem)
 
   return (
     <>
@@ -26,6 +33,15 @@ const Card = ({ item }) => {
             <h3>₹{item?.oldPrice}</h3>
           </div>
           <div className="prices_icon">
+            {isItem ? 
+            <FavoriteIcon
+              onClick={() =>
+                dispatch(
+                  removeWishList(item.id)
+                )
+              }
+              className="icon"
+            /> : 
             <FavoriteBorderIcon
               onClick={() =>
                 dispatch(
@@ -39,7 +55,7 @@ const Card = ({ item }) => {
                 )
               }
               className="icon"
-            />
+            />}
             <span
               onClick={() =>
                 dispatch(

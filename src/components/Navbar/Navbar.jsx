@@ -3,14 +3,12 @@ import "./Navbar.scss";
 import { useSelector } from "react-redux";
 
 //icons
-import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
+
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
-import HoverCart from "../HoverCart/HoverCart";
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = () => {
@@ -77,8 +75,8 @@ const Navbar = () => {
               
             </div>
             <div className="cartIcon">
-              <Link to='cart'>
-              <ShoppingCartOutlinedIcon className="icon" onClick={cart} />
+              <Link to='cart' className="link">
+              <ShoppingCartOutlinedIcon className="icon"/>
               <span>{cartProducts.length}</span>
               </Link>
             </div>

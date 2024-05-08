@@ -66,11 +66,11 @@ const CartItems = () => {
           <hr />
           <div className="price item">
             <p>Price</p>
-            <p>${totalPrice()}</p>
+            <p>₹{totalPrice()}</p>
           </div>
           <div className="discount item">
             <p>discount</p>
-            <p className="dprice">$0</p>
+            <p className="dprice">₹0</p>
           </div>
           <div className="delPrice item">
             <p>Deliver Charges</p>
@@ -79,7 +79,7 @@ const CartItems = () => {
           <hr />
           <div className="totalprice item">
             <h4>Total Amount</h4>
-            <h4>${totalPrice()}</h4>
+            <h4>₹{totalPrice()}</h4>
           </div>
          <button>Checkout</button>
        </div>

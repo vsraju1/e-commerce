@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import List from "../List/List";
 import "./Products.scss";
 import { useParams } from "react-router-dom";
@@ -27,6 +27,9 @@ const categoryData = [
 ];
 
 const Products = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [sort, setSort] = useState(null);
   const catId = useParams().id;
   // const {id} = useParams()

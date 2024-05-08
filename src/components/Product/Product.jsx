@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Product.scss";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -13,6 +13,9 @@ import BalanceIcon from "@mui/icons-material/Balance";
 import { addItem } from "../../reducers/CartSlice";
 
 const Product = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [quantity, setQuantity] = useState(1);
   const {id} = useParams()
   

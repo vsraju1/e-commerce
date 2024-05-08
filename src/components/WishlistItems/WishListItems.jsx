@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './WishListItems.scss'
 import { useSelector } from 'react-redux'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
@@ -7,6 +8,10 @@ import { removeWishList } from '../../reducers/WishListSlice';
 
 
 const WishListItems = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const wishListItems = useSelector(state=> state.wishList)
   const total = wishListItems.length;
   const dispatch = useDispatch();

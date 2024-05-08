@@ -72,12 +72,15 @@ const Navbar = () => {
             <div className="cartIcon">
               <Link className="link" to="/wishlist">
                 <FavoriteBorderIcon className="icon" onClick={wishList} />
+                <span>{wishListProducts.length}</span>
               </Link>
-              <span>{wishListProducts.length}</span>
+              
             </div>
             <div className="cartIcon">
+              <Link to='cart'>
               <ShoppingCartOutlinedIcon className="icon" onClick={cart} />
               <span>{cartProducts.length}</span>
+              </Link>
             </div>
           </div>
         </div>

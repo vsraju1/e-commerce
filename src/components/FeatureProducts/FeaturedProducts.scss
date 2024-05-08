@@ -1,56 +1,68 @@
-.featuredProducts{
-    margin: 100px 40px;
+.featuredProducts {
+  margin: 100px 40px;
 
-    .top{
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        margin-bottom: 50px;
+  .top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 50px;
 
-        h1{
-            text-transform: capitalize;
-            flex: 2;
-        }
-        p{
-            flex: 3;
-            color: gray;
-        }
+    h1 {
+      text-transform: capitalize;
+      flex: 2;
     }
-
-    .bottom{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 50px;
+    p {
+      flex: 3;
+      color: gray;
+      text-align: justify;
     }
+  }
+
+  .bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+  }
 }
 
-@media (max-width: 820px){
-    .featuredProducts{
-        margin: 50px 15px;
-    
-        .top{
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            margin-bottom: 50px;
-    
-            h1{
-                text-transform: capitalize;
-                flex: 2;
-            }
-            p{
-                flex: 3;
-                color: gray;
-            }
-        }
-    
-        .bottom{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
+@media (max-width: 820px) {
+  .featuredProducts {
+    margin: 50px 15px;
+
+    .top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 50px;
+
+      h1 {
+        text-transform: capitalize;
+        flex: 2;
+      }
+      p {
+        flex: 3;
+        color: gray;
+      }
     }
-    
+
+    .bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .featuredProducts {
+    .top {
+      flex-direction: column;
+
+      h1 {
+        margin-bottom: 10px;
+      }
+    }
+  }
 }

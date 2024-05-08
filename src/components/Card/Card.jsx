@@ -23,7 +23,7 @@ const Card = ({ item }) => {
             {item.isNew && <span>New Arrival</span>}
 
             <img src={item.img} alt="" className="mainImg" />
-            <img src={item.img2} alt="" className="secondImg" />
+            <img src={item?.img2} alt="" className="secondImg" />
           </div>
           <h2>{item.title}</h2>
         </Link>

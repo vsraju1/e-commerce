@@ -35,8 +35,9 @@ const Product = () => {
         <div className="product">
           <div className="left">
             <div className="images">
-              <img src={item.img} alt="" onClick={(e) => setSelectedImage(item.img)} />
-              <img src={item.img2} alt="" onClick={(e) => setSelectedImage(item.img2)} />
+              
+              {item.img2 === '' ? <img src={item.img} alt="" onClick={(e) => setSelectedImage(item.img)} /> : <img src={item?.img2} alt="" onClick={(e) => setSelectedImage(item.img2)} />}
+              
             </div>
             <div className="mainImg">
               <img src={selectedImage} alt="" />

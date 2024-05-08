@@ -22,7 +22,7 @@ const categoryData = [
     subCat: "pergola",
   },
   {
-    subCat: "railings",
+    subCat: "staircase",
   },
 ];
 

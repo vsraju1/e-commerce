@@ -3,7 +3,7 @@ import "./Categories.scss";
 
 const Categories = () => {
   return (
-    <>
+    <div className="catContainer">
       <h2 className="design_heading">Disigns</h2>
       <div className="categories">
         <div className="col">
@@ -31,7 +31,7 @@ const Categories = () => {
           </div>
         </div>
         <div className="col">
-          <div className="row">
+          <div className="row imgL">
             <img
               src="https://images.pexels.com/photos/326347/pexels-photo-326347.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt=""
@@ -81,7 +81,7 @@ const Categories = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

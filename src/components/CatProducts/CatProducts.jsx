@@ -25,3 +25,6 @@ const CatProducts = () => {
 };
 
 export default CatProducts;
+
+
+

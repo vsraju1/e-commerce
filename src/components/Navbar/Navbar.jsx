@@ -11,14 +11,15 @@ import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
 import HoverCart from "../HoverCart/HoverCart";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [wishListOpen, setWishListOpen] = useState(false);
 
   const wishList = () => {
-    setWishListOpen((prev) => !prev)
-  }
+    setWishListOpen((prev) => !prev);
+  };
   const cart = () => {
     setCartOpen((prev) => !prev);
   };
@@ -30,28 +31,30 @@ const Navbar = () => {
     <div className="navbar">
       <div className="wrapper">
         <div className="left">
-          <div className="logo">
-            <Link className="link logo" to="/"></Link>
+          <div className="menu">
+            <MenuIcon className="icon" />
           </div>
-          <div className="item">
-            <Link className="link" to="products/gates">
-              Gates
-            </Link>
-          </div>
-          <div className="item">
-            <Link className="link" to="products/grills">
-              Grills
-            </Link>
-          </div>
-          <div className="item">
-            <Link className="link" to="products/shutters">
-              Shutters
-            </Link>
-          </div>
-          <div className="item">
-            <Link className="link" to="products/all">
-              More..
-            </Link>
+          <div className="icons">
+            <div className="item">
+              <Link className="link" to="products/gates">
+                Gates
+              </Link>
+            </div>
+            <div className="item">
+              <Link className="link" to="products/grills">
+                Grills
+              </Link>
+            </div>
+            <div className="item">
+              <Link className="link" to="products/shutters">
+                Shutters
+              </Link>
+            </div>
+            <div className="item">
+              <Link className="link" to="products/all">
+                More..
+              </Link>
+            </div>
           </div>
         </div>
         <div className="center">
@@ -60,20 +63,20 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="right">
-          <div className="item"></div>
-          <div className="item"></div>
-          <div className="item"></div>
+
           <div className="icons">
-            <SearchIcon />
-            <Link className="link" to="/signup"><PersonOutlineIcon /></Link>
+            <SearchIcon className="icon"/>
+            <Link className="link" to="/signup">
+              <PersonOutlineIcon className="icon" />
+            </Link>
             <div className="cartIcon">
-              <Link className="link" to='/wishlist'>
-              <FavoriteBorderIcon onClick={wishList}/>
+              <Link className="link" to="/wishlist">
+                <FavoriteBorderIcon className="icon" onClick={wishList} />
               </Link>
               <span>{wishListProducts.length}</span>
             </div>
             <div className="cartIcon">
-              <ShoppingCartOutlinedIcon onClick={cart} />
+              <ShoppingCartOutlinedIcon className="icon" onClick={cart} />
               <span>{cartProducts.length}</span>
             </div>
           </div>

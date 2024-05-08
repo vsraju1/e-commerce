@@ -64,6 +64,7 @@ const Products = () => {
       </div>
       <div className="right">
         <List
+        className='list'
           catId={catId}
           maxPrice={maxPrice}
           sort={sort}

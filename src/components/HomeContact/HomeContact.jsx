@@ -15,9 +15,9 @@ const HomeContact = () => {
                 <span>+91 77021X54, +91 98685X425</span>
             </div>
             <div className="icons">
-                <FacebookIcon />
-                <InstagramIcon />
-                <XIcon />
+                <FacebookIcon className='icon'/>
+                <InstagramIcon className='icon'/>
+                <XIcon className='icon'/>
             </div>
         </div>
     </div>

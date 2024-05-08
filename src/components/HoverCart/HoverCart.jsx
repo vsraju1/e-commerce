@@ -26,7 +26,7 @@ const HoverCart = () => {
                 <div className="details">
                     <h3>{item.title}</h3>
                     <p>{item.description?.substring(0,50)}</p>
-                    <div className="price">{item.quantity} X ${item.price}</div>
+                    <div className="price">{item.quantity} X ₹{item.price}</div>
                 </div>
                 <DeleteOutlineIcon className='deleteItem' onClick={()=>dispatch(removeItem(item.id))}/>
             </div>
@@ -34,7 +34,7 @@ const HoverCart = () => {
 
         <div className="total">
             <span>SUBTOTAL:</span>
-            <span>${totalPrice()}</span>
+            <span>₹{totalPrice()}</span>
         </div>
         <button>Proceed to Checkout</button>
         <p className='reset' onClick={()=>dispatch(resetCart())}>RESET CART</p>

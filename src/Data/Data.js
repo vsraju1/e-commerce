@@ -194,7 +194,7 @@ export const sheds = [
     img2: "",
     price: 90000,
     oldPrice: 100000,
-    featured: false,
+    featured: true,
     category: "sheds",
     isNew: true,
     desc: "penthouse made with iron structure and sheets",

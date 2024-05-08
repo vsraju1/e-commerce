@@ -8,7 +8,6 @@ import { removeWishList } from '../../reducers/WishListSlice';
 
 const WishListItems = () => {
   const wishListItems = useSelector(state=> state.wishList)
-  console.log(wishListItems)
   const total = wishListItems.length;
   const dispatch = useDispatch();
 

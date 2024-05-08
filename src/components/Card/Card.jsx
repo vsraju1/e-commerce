@@ -10,10 +10,8 @@ import { useSelector } from "react-redux";
 const Card = ({ item }) => {
   const dispatch = useDispatch();
   const wishListItems = useSelector(state => state.wishList)
-  console.log(wishListItems)
-
   const isItem = wishListItems.some(wishItem => wishItem.id === item.id)
-  console.log(isItem)
+
 
   return (
     <>

@@ -6,9 +6,9 @@ import WestOutlinedIcon from "@mui/icons-material/WestOutlined";
 import { useState } from "react";
 
 const images = [
-  "https://images.pexels.com/photos/2600964/pexels-photo-2600964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/18320116/pexels-photo-18320116/free-photo-of-wooden-hut-of-lifeguards.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/22703015/pexels-photo-22703015/free-photo-of-cafe.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "/gate.jpg",
+  "/grill1.jpg",
+  "/shed1.jpg",
 ];
 
 const Slider = () => {

@@ -18,7 +18,6 @@ import { store } from "./Redux/Store.js";
 import CatProducts from "./components/CatProducts/CatProducts.jsx";
 import LoginSignUp from "./components/LoginSignUp/LoginSignUp.jsx";
 import WishListItems from "./components/WishlistItems/WishListItems.jsx";
-import ScrollToTop from "./ScrollToTop.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

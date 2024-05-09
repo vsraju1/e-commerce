@@ -1,5 +1,6 @@
 import HomeContact from "../HomeContact/HomeContact";
 import "./Footer.scss";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (<>
@@ -8,26 +9,26 @@ const Footer = () => {
       <div className="top">
         <div className="item">
           <h4>Categories</h4>
-          <span>Gates</span>
-          <span>Grills</span>
-          <span>Shutters</span>
-          <span>Sheds</span>
-          <span>More..</span>
+          <span><Link to='products/gates' className="link">Gates</Link></span>
+          <span><Link to='products/grills' className="link">Grills</Link></span>
+          <span><Link to='products/shutters' className="link">Shutters</Link></span>
+          <span><Link to='products/sheds' className="link">Sheds</Link></span>
+          <span><Link to='products/all' className="link">More..</Link></span>
         </div>
         <div className="item">
           <h4>Links</h4>
-          <span>Home</span>
-          <span>Store</span>
-          <span>FAQ</span>
+          <span><Link className="link" to="/">Home</Link></span>
+          <span><Link className="link" to="/products">Products</Link></span>
         </div>
-        <div className="item">
+        <div className="item about">
           <h4>About</h4>
-          <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni perspiciatis eos nobis laborum odio maiores esse minima adipisci facere velit quis porro expedita non atque ea, recusandae quos vitae voluptatum.</span>
+          <span>VPFW specializes in creating custom gates and ironwork for buildings we blend craftsmanship with functionality to enhance the aesthetics and security of your structures. Whether its a residential home or a commercial property, VPFW delivers quality iron solutions tailored to your needs</span>
         </div>
-        <div className="item">
+        <div className="item about">
           <h4>Contact</h4>
           <span>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quidem tempore ipsum possimus? Asperiores aliquam animi enim, quia labore cum non architecto. Minus voluptatibus nihil ab accusantium consequatur numquam harum?
+            Ph: +91 77023XXX54<br />
+            Ph: +91 9866XXXX25
           </span>
         </div>
       </div>

@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Navbar.scss";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
 //icons
 
@@ -8,18 +9,15 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchIcon from "@mui/icons-material/Search";
-import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from '@mui/icons-material/Close';
+
 
 const Navbar = () => {
-  const [cartOpen, setCartOpen] = useState(false);
-  const [wishListOpen, setWishListOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const wishList = () => {
-    setWishListOpen((prev) => !prev);
-  };
-  const cart = () => {
-    setCartOpen((prev) => !prev);
+  const menu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   const cartProducts = useSelector((state) => state.products);
@@ -30,28 +28,44 @@ const Navbar = () => {
       <div className="wrapper">
         <div className="left">
           <div className="menu">
-            <MenuIcon className="icon" />
+          {!menuOpen ? (
+        <MenuIcon className="icon" onClick={menu} />
+      ) : (
+        <CloseIcon className="icon" onClick={menu} />
+      )}
           </div>
-          <div className="icons">
+          <div className={`icons ${menuOpen ? 'opened' : ""}`}>
             <div className="item">
-              <Link className="link" to="products/gates">
+              <NavLink 
+              className="link" to="products/gates"
+              onClick={() => setMenuOpen(false)}
+              >
                 Gates
-              </Link>
+              </NavLink>
             </div>
             <div className="item">
-              <Link className="link" to="products/grills">
+              <NavLink 
+              className="link" to="products/grills"
+              onClick={() => setMenuOpen(false)}
+              >
                 Grills
-              </Link>
+              </NavLink>
             </div>
             <div className="item">
-              <Link className="link" to="products/shutters">
+              <NavLink 
+              className="link" to="products/shutters"
+              onClick={() => setMenuOpen(false)}
+              >
                 Shutters
-              </Link>
+              </NavLink>
             </div>
             <div className="item">
-              <Link className="link" to="products/all">
+              <NavLink 
+              className="link" to="products/all"
+              onClick={() => setMenuOpen(false)}
+              >
                 More..
-              </Link>
+              </NavLink>
             </div>
           </div>
         </div>
@@ -69,7 +83,7 @@ const Navbar = () => {
             </Link>
             <div className="cartIcon">
               <Link className="link" to="/wishlist">
-                <FavoriteBorderIcon className="icon" onClick={wishList} />
+                <FavoriteBorderIcon className="icon" />
                 <span>{wishListProducts.length}</span>
               </Link>
               
@@ -83,7 +97,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {cartOpen && <HoverCart />}
     </div>
   );
 };

@@ -23,6 +23,11 @@ const Navbar = () => {
   const cartProducts = useSelector((state) => state.products);
   const wishListProducts = useSelector((state) => state.wishList);
 
+  let totalQuant = 0;
+  for (const item of cartProducts){
+    totalQuant += item.quantity;
+  }
+
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -78,21 +83,21 @@ const Navbar = () => {
 
           <div className="icons">
             <SearchIcon className="icon"/>
-            <Link className="link" to="/signup">
+            <NavLink className="link" to="/signup">
               <PersonOutlineIcon className="icon" />
-            </Link>
+            </NavLink>
             <div className="cartIcon">
-              <Link className="link" to="/wishlist">
+              <NavLink className="link" to="/wishlist">
                 <FavoriteBorderIcon className="icon" />
                 <span>{wishListProducts.length}</span>
-              </Link>
+              </NavLink>
               
             </div>
             <div className="cartIcon">
-              <Link to='cart' className="link">
+              <NavLink to='cart' className="link">
               <ShoppingCartOutlinedIcon className="icon"/>
-              <span>{cartProducts.length}</span>
-              </Link>
+              <span>{totalQuant}</span>
+              </NavLink>
             </div>
           </div>
         </div>

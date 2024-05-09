@@ -5,6 +5,7 @@
   justify-content: center;
   z-index: 999999;
   position: fixed;
+  top: 0;
 
   .wrapper {
     // width: 100%;
@@ -15,6 +16,7 @@
     background-color: white;
     z-index: 9999;
     transition: width 2s ease;
+    box-shadow: 0 1px 2px lightgray;
 
     .icons {
       display: flex;
@@ -28,9 +30,9 @@
       gap: 20px;
       align-items: center;
       flex: 1;
+      -webkit-tap-highlight-color: transparent;
       
-      .icons{
-      }
+      
       .active{
         color: rgb(198, 173, 7);
       }
@@ -47,6 +49,8 @@
       align-items: center;
       justify-content: center;
       flex: 1;
+      -webkit-tap-highlight-color: transparent;
+
 
       .logo {
         font-size: 30px;
@@ -64,6 +68,11 @@
         gap: 15px;
         color: #777;
         cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+
+        .active{
+          color: #ff4141;
+        }
 
         .cartIcon {
           position: relative;

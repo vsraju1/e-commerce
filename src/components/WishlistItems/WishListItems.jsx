@@ -18,6 +18,7 @@ const WishListItems = () => {
 
   return (
     <div className='wishList'>
+      <div className="wishwrapper">
       <div className="headers">
         <h3>My WishList({total})</h3>
       </div>
@@ -43,6 +44,7 @@ const WishListItems = () => {
           </div>
         </div>
       ))}
+      </div>
     </div>
   )
 }

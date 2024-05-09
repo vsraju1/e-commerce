@@ -3,14 +3,19 @@ import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useDispatch } from "react-redux";
-import { addItem } from "../../reducers/CartSlice";
+import { addItem, removeItem } from "../../reducers/CartSlice";
 import { addtoWishList, removeWishList } from "../../reducers/WishListSlice";
 import { useSelector } from "react-redux";
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 const Card = ({ item }) => {
   const dispatch = useDispatch();
   const wishListItems = useSelector(state => state.wishList)
   const isItem = wishListItems.some(wishItem => wishItem.id === item.id)
+
+  const cartItems = useSelector(state => state.products)
+  const isCartItem = cartItems.some(cartItem => cartItem.id === item.id)
 
 
   return (
@@ -54,7 +59,9 @@ const Card = ({ item }) => {
               }
               className="icon"
             />}
+            {isCartItem && <span onClick={() => dispatch(removeItem(item.id))}><RemoveIcon /></span>}
             <span
+            className="cartquant"
               onClick={() =>
                 dispatch(
                   addItem({
@@ -68,7 +75,7 @@ const Card = ({ item }) => {
                 )
               }
             >
-              +
+               <AddIcon />
             </span>
           </div>
         </div>

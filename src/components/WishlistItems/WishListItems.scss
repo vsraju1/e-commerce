@@ -1,10 +1,10 @@
 .wishList {
-  padding-top: 100px;
+  margin-top: 100px;
   width: 60%;
   margin: auto;
   font-family: Roboto, sans-serif;
   box-shadow: 0px 0px 5px lightgrey;
-
+  
   .headers {
     h3 {
       font-size: 17px;
@@ -13,55 +13,60 @@
       padding: 20px 40px;
     }
   }
-
-  .wishListItems {
-    display: flex;
-    height: 100px;
-    color: gray;
-    padding: 40px;
-    .left {
-      flex: 0.9;
-      display: flex;
-      gap: 40px;
-
-      .img {
-        height: 100%;
-        width: auto;
-        overflow: hidden;
-        img {
-          height: 100%;
-          width: 100%;
-        }
-      }
-      .desc {
+  .wishwrapper{
+    margin-top: 100px;
+    .wishListWrapper{
+      .wishListItems {
         display: flex;
-        flex-direction: column;
-        gap: 20px;
-
-        h3 {
-          text-transform: capitalize;
-          font-size: 18px;
-          color: #212121;
-          font-weight: 500;
-          margin-bottom: 5px;
+        height: 100px;
+        color: gray;
+        padding: 40px;
+        .left {
+          flex: 0.9;
+          display: flex;
+          gap: 40px;
+    
+          .img {
+            height: 100%;
+            width: auto;
+            overflow: hidden;
+            img {
+              height: 100%;
+              width: 100%;
+            }
+          }
+          .desc {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+    
+            h3 {
+              text-transform: capitalize;
+              font-size: 18px;
+              color: #212121;
+              font-weight: 500;
+              margin-bottom: 5px;
+            }
+            h4 {
+              font-size: 16px;
+              font-weight: 400;
+              color: rgb(198, 173, 7);
+            }
+          }
         }
-        h4 {
-          font-size: 16px;
-          font-weight: 400;
-          color: rgb(198, 173, 7);
+        .right {
+          flex: 0.1;
+    
+          .icon {
+            color: red;
+            font-weight: 400;
+            cursor: pointer;
+          }
         }
-      }
-    }
-    .right {
-      flex: 0.1;
-
-      .icon {
-        color: red;
-        font-weight: 400;
-        cursor: pointer;
       }
     }
   }
+  
 }
 
 @media (max-width: 820px) {

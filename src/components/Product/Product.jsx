@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import "./Product.scss";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { addtoWishList, removeWishList } from "../../reducers/WishListSlice";
+import { useSelector } from "react-redux";
 
 //data
 import { allProducts } from "../../Data/Data";
@@ -9,10 +11,12 @@ import { allProducts } from "../../Data/Data";
 //icons
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import BalanceIcon from "@mui/icons-material/Balance";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+
 import { addItem } from "../../reducers/CartSlice";
 
 const Product = () => {
+  const wishListItems = useSelector(state => state.wishList)
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -31,7 +35,8 @@ const Product = () => {
   
   const item = allProducts.find((item) => item.id === id)
   const [selectedImage, setSelectedImage] = useState(item.img);
-
+  
+  const isItem = wishListItems.some(wishItem => wishItem.id === item.id)
   return (
     <div>
       
@@ -68,12 +73,22 @@ const Product = () => {
               <AddShoppingCartIcon /> ADD TO CART
             </button>
             <div className="link">
-              <div className="item">
-                <FavoriteBorderIcon /> ADD TO WISH LIST
-              </div>
-              <div className="item">
-                <BalanceIcon /> ADD TO COMPARE
-              </div>
+              {isItem ? <div className="item" onClick={() => dispatch(removeWishList(item.id))}>
+                <FavoriteIcon 
+                
+                /> ADD TO WISH LIST
+              </div> : <div className="item" onClick={() => dispatch(addtoWishList({
+                  id: item.id,
+                  title: item.title,
+                  description: item.desc,
+                  price: item.price,
+                  img: item.img,
+                }))}>
+                <FavoriteBorderIcon 
+                
+                /> ADD TO WISH LIST
+              </div>}
+              
             </div>
             <div className="info">
               <span>Vendor: VPFW</span>

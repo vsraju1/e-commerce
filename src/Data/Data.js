@@ -4,7 +4,6 @@ export const gates = [
     title: "gate with hpl sheet ",
     img: "/gate.jpg",
     img2: "",
-
     price: 32000,
     oldPrice: 35000,
     featured: true,
